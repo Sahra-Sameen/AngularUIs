@@ -1,0 +1,116 @@
+<div class="main-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h4
+      class="text-dark mt-0 mb-4"
+      style="margin-left: 10px; padding-top: 20px"
+    >
+      Dish Categories
+    </h4>
+
+    <div
+      class="food-list p-2"
+      style="max-height: calc(100vh - 60px);"
+      data-bs-spy="scroll"
+      data-bs-target="#navbar-example"
+    >
+      <div
+        class="food-item d-flex align-items-center justify-content-between rounded mb-3"
+        *ngFor="let item of foodItems"
+        style="background-color: white; height: 40px"
+      >
+        <img
+          [src]="item.imageUrl"
+          alt="{{ item.category }}"
+          class="food-image"
+          style="height: 25px; width: 25px; margin-left: 10px"
+        />
+        <h4
+          class="mb-0 text-center flex-grow-1 text-nowrap ms-3"
+          style="font-size: 1rem; font-weight: 600"
+        >
+          {{ item.category }}
+        </h4>
+        <h5
+          class="rounded-circle text-dark text-center px-2 ms-3"
+          style="
+            font-size: 12px;
+            font-weight: 600;
+            background-color: rgb(220, 215, 215);
+            border-radius: 10px;
+            margin-right: 10px;
+            padding: 5px;
+          "
+        >
+          {{ item.count }}
+        </h5>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="content">
+    <div class="d-flex justify-content-between mt-2 mb-2">
+      <h4 class="text-dark mt-0 mb-4" style="margin-left: 20px; padding-top: 20px">
+        Manage Dishes
+      </h4>
+      <div class="input-group mt-4" style="max-width: 350px; max-height: 25px">
+        <input
+          class="form-control border"
+          type="search"
+          placeholder="Search"
+          id="example-search-input"
+          style="border-radius: 10px 0 0 10px"
+        />
+        <button
+          class="btn btn-outline-secondary bg-white border ms-n5"
+          type="button"
+          style="border-radius: 0 10px 10px 0"
+        >
+          <i class="fa fa-search"></i>
+        </button>
+        <button
+          class="btn btn-primary border rounded text-white"
+          style="margin: 0 20px 0 10px"
+          type="button"
+        >
+          Add New Dish
+        </button>
+      </div>
+    </div>
+
+    <div style="background-color: rgb(223, 219, 213); padding: 20px; margin: 0 20px 0 20px ; padding-right: 40px;">
+      <div class="row">
+        <h4 class="text-dark mt-0 mb-3">Desserts (19)</h4>
+        <div
+          class="dessertClass d-flex flex-row flex-wrap"
+          style="overflow-y: auto; height: 565px"
+          data-bs-spy="scroll"
+          data-bs-target="#navbar-example"
+        >
+          <div
+            class="card rounded mb-2"
+            style="width: 18rem"
+            *ngFor="let dessert of dessertItem"
+          >
+            <img
+              src="{{ dessert.imageUrl }}"
+              class="card-img-top"
+              style="height: 200px"
+              alt="..."
+            />
+            <div class="card-body">
+              <h6 class="card-text text-muted">{{ dessert.foodCategory }}</h6>
+              <h5 class="card-title" style="font-size: 18px">
+                {{ dessert.foodName }}
+              </h5>
+              <p class="food-count text-muted" style="font-size: 14px">
+                {{ dessert.desCount }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

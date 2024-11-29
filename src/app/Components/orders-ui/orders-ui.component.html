@@ -1,0 +1,132 @@
+<div class="container1 p-4">
+  <!-- Header Section -->
+  <div class="first d-flex justify-content-between mt-2 p-2">
+    <h2>Orders</h2>
+    <h4 class="date">Wednesday, 6 November 2024</h4>
+  </div>
+
+  <!-- Filter and Search Section -->
+  <div class="second d-flex justify-content-between p-2">
+    <div class="d-flex gap-2">
+      <span class="badge text-bg-light">All</span>
+      <span class="badge text-bg-light">Processed</span>
+      <span class="badge text-bg-light">Completed</span>
+    </div>
+    <div class="d-flex gap-2">
+      <button
+        class="btn btn-outline-secondary bg-white border ms-n5"
+        type="button"
+      >
+        <i class="fa fa-list" aria-hidden="true"></i>
+      </button>
+      <div class="input-group">
+        <input
+          class="form-control border"
+          type="search"
+          placeholder="Search"
+          id="example-search-input"
+        />
+      </div>
+      <button
+        class="btn btn-outline-secondary bg-white border ms-n5"
+        type="button"
+      >
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Orders Section -->
+  <div class="container2 mt-2 p-5">
+    <div class="row">
+      <div class="col-12 col-md-4 mb-4" *ngFor="let order of orders">
+        <div
+          class="card"
+          style="
+            max-width: 100%;
+            margin: auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <div class="card-body">
+            <!-- Order Header -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div class="d-flex align-items-start">
+                <!-- Table Number -->
+                <span
+                  class="badge bg-success d-flex align-items-center justify-content-center"
+                  style="font-size: 1rem; height: 50px; width: 50px"
+                >
+                  {{ order.table }}
+                </span>
+              
+                <!-- Customer Name and Order Info -->
+                <div class="ms-3">
+                  <strong>{{ order.customer }}</strong>
+                  <br />
+                  <small class="text-dark">Order {{ order.orderId }}/{{ order.orderType }}</small>
+                </div>
+              </div>
+
+              <div>
+                <span
+                  class="text-dark rounded"
+                  style="
+                    font-weight: 400;
+                    font-size: 14px;
+                    background-color: rgb(60, 251, 60);
+                    padding-left: 10px;
+                    padding-right: 10px;
+                  "
+                >
+                  <i class="fas fa-check-circle"></i> {{ order.status }}
+                </span>
+                <br />
+                <small class="text-success" style="font-size: 14px; margin-right: 20px;">{{ order.statusMessage }}</small>
+              </div>
+            </div>
+
+            <!-- Order Date and Time -->
+            <div class="d-flex justify-content-between text-muted mb-3">
+              <small>{{ order.date }}</small>
+              <small style="margin-right: 20px;">{{ order.time }}</small>
+            </div>
+
+            <!-- Order Items Table -->
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Qty</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of order.items">
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.qty }}</td>
+                  <td>${{ item.price.toFixed(2) }}</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td><strong>Total</strong></td>
+                  <td></td>
+                  <td>
+                    <strong>${{ order.total.toFixed(2) }}</strong>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+
+            <!-- Action Buttons -->
+            <div class="d-flex justify-content-evenly mt-4 mb-3">
+              <button class="btn btn-outline-success">See Details</button>
+              <button class="btn btn-warning">Pay Bills</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

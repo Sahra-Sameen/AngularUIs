@@ -1,0 +1,31 @@
+
+ .dessertClass {
+  gap: 3rem; /* Add spacing between cards */
+}
+
+  body {
+    margin: 0;
+    overflow: hidden; /* Prevents the overall screen from scrolling */
+  }
+
+  .main-container {
+    height: 100vh; /* Restricts height to the viewport */
+    display: flex; /* Ensures children are side by side */
+  }
+
+  .sidebar {
+    background-color: rgb(223, 219, 213);
+    height: 100vh; /* Full height */
+    overflow-y: auto; /* Independent scrolling */
+    width: 25%; /* Adjust width as needed */
+  }
+
+  .content {
+    background-color: rgb(255, 255, 255);
+    height: 100vh; /* Full height */
+    overflow-y: auto; /* Independent scrolling */
+    width: 75%; /* Adjust width as needed */
+  }
+
+
+
