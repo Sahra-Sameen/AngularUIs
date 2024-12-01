@@ -1,0 +1,47 @@
+<div
+  class="d-flex flex-row justify-content-between mt-4 mb-2"
+  style="padding-left: 20px"
+>
+  <h6 style="font-weight: bold">Special menu for you</h6>
+  <div class="d-flex gap-4">
+    <div
+      class="border d-flex align-items-center justify-content-center"
+      style="width: 20px; height: 20px"
+    >
+    <i class="fa-solid fa-filter"></i>
+    </div>
+    <div
+      class="d-flex align-items-center justify-content-center"
+      style="width: 20px; height: 20px; margin-right: 20px; font-size: 14px; font-weight: bold;"
+    >
+      Filter
+    </div>
+  </div>
+</div>
+
+
+<div
+          class="dessertClass d-flex flex-row flex-wrap gap-4 mt-2"
+          style="overflow-y: auto; height: 290px; padding-left: 25px;"
+          data-bs-spy="scroll"
+          data-bs-target="#navbar-example"
+        >
+          <div
+            class="card rounded mb-2"
+            style="width: 15rem"
+            *ngFor="let item of menuItems"
+          >
+            <img
+              src="{{ item.imageUrl }}"
+              class="card-img-top"
+              style="height: 200px"
+              alt="..."
+            />
+            <div class="card-body">
+              <h6 class="card-text text-muted" style="height: 35px;">{{ item.foodName }}</h6>
+              <h5 class="card-title" style="font-size: 18px; font-weight: bold;">
+                {{ item.price | currency}}
+              </h5>
+            </div>
+          </div>
+        </div>

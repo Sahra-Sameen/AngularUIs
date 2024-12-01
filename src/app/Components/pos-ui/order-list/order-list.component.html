@@ -1,0 +1,66 @@
+<div class="d-flex flex-row justify-content-between mt-2 mb-2" style="padding-left: 20px;">
+  <h6 style="font-weight: bold">Order List</h6>
+  <div class="d-flex gap-4">
+    <div
+      class="border d-flex align-items-center justify-content-center"
+      style="width: 20px; height: 20px"
+    >
+      <i class="fa-solid fa-chevron-left"></i>
+    </div>
+    <div
+      class="border d-flex align-items-center justify-content-center"
+      style="width: 20px; height: 20px"
+    >
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+  </div>
+</div>
+
+<div style="overflow-x: auto; white-space: nowrap; padding: 10px;">
+  <div
+    class="d-inline-block p-2 align-items-center rounded border"
+    style="width: 200px; margin-right: 10px;"
+    *ngFor="let order of orders"
+  >
+    <div class="d-flex align-items-center">
+      <!-- Table Number -->
+      <span
+        class="badge bg-success d-flex align-items-center justify-content-center"
+        style="font-size: 0.8rem; height: 30px; width: 30px"
+      >
+        {{ order.table }}
+      </span>
+
+      <!-- Customer Name and Order Info -->
+      <div class="ms-2">
+        <div class="d-flex flex-column">
+          <strong class="text-dark" style="font-size: 10px">
+            {{ order.customer }}
+            <span
+              style="
+                margin-left: 15px;
+                background-color: chartreuse;
+                padding: 3px;
+                border-radius: 5px;
+              "
+            >
+              <i class="fa-solid fa-check"></i> {{ order.status }}
+            </span>
+          </strong>
+          <div class="d-flex align-items-center" style="margin-top: 1px">
+            <small class="text-muted" style="font-size: 10px">
+              {{ order.items }}
+              <i
+                class="fa-solid fa-right-long ms-1"
+                style="font-size: 10px; margin-left: 4px"
+              ></i>
+              <span style="margin-left: 10px; color: rgb(85, 168, 3)">
+                {{ order.statusMessage }}
+              </span>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
