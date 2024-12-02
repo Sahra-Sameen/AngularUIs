@@ -46,33 +46,5 @@ export class OrderListComponent {
       items: '2 Items',
       BgColor: '#76FF03',
     },
-    {
-      table: 'T7',
-      customer: 'Mr.Willy',
-      orderId: '#225',
-      status: 'Ready',
-      statusMessage: 'Ready to Serve',
-      items: '2 Items',
-      BgColor: '#76FF03',
-    },
-    {
-      table: 'T7',
-      customer: 'Mr.Willy',
-      orderId: '#225',
-      status: 'Ready',
-      statusMessage: 'Ready to Serve',
-      items: '2 Items',
-      BgColor: '#76FF03',
-    },
-    {
-      table: 'T7',
-      customer: 'Mr.Willy',
-      orderId: '#225',
-      status: 'Ready',
-      statusMessage: 'Ready to Serve',
-      items: '2 Items',
-      BgColor: '#76FF03',
-    },
-    
   ];
 }
